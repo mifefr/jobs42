@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abruyere <abruyere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/09 18:08:32 by abruyere          #+#    #+#             */
-/*   Updated: 2015/02/09 18:08:36 by abruyere         ###   ########.fr       */
+/*   Created: 2015/02/09 18:08:05 by abruyere          #+#    #+#             */
+/*   Updated: 2015/02/09 18:08:08 by abruyere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_b(t_pile	*pileb, t_pile *pilea)
+int		ft_puterror(char *str)
 {
-	t_pile	*pilerec;
-	t_pile	*pilebeg;
-
-	t_pilebeg = pilea;
-	pilerec = pileb;
-	pilea = pilea->next;
-	pilea->prev = NULL;
-	while (pilea->next != NULL)
-		pilea = pile->next;
-	pilea->next = pilerec;
-	pilea->next->prev = pilea;
-	pilea->next->next = NULL;
-	pilea = pilebeg;
+	ft_putstr("Error\n");
+	ft_putstr(str);
+	ft_putchar('\n');
+	exit(0);
+	return (0);
 }

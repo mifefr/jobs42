@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abruyere <abruyere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/09 18:08:32 by abruyere          #+#    #+#             */
-/*   Updated: 2015/02/09 18:08:36 by abruyere         ###   ########.fr       */
+/*   Created: 2015/01/30 17:54:48 by abruyere          #+#    #+#             */
+/*   Updated: 2015/01/30 18:00:50 by abruyere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
 
-void	push_b(t_pile	*pileb, t_pile *pilea)
+void	push_swap(int nbe, char **list)
 {
-	t_pile	*pilerec;
-	t_pile	*pilebeg;
+	int		i;
+	t_pile	pa;
 
-	t_pilebeg = pilea;
-	pilerec = pileb;
-	pilea = pilea->next;
-	pilea->prev = NULL;
-	while (pilea->next != NULL)
-		pilea = pile->next;
-	pilea->next = pilerec;
-	pilea->next->prev = pilea;
-	pilea->next->next = NULL;
-	pilea = pilebeg;
+	pa = new_elem(pa);
+	i = 0;
+	while (i < nbe)
+	{
+		pa = add_elem(pa, (int)list[i]);
+		i++;
+	}
+
+}
+
+int	 	main(int argc, char **argv)
+{
+	int i;
+
+	i = 0;
+	if (argc == 1)
+		ft_puterror("");
+	push_swap(argc - 1, argv);
+	return (0);
 }

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abruyere <abruyere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/09 18:08:32 by abruyere          #+#    #+#             */
-/*   Updated: 2015/02/09 18:08:36 by abruyere         ###   ########.fr       */
+/*   Created: 2015/02/09 18:09:37 by abruyere          #+#    #+#             */
+/*   Updated: 2015/02/09 18:09:41 by abruyere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_b(t_pile	*pileb, t_pile *pilea)
+t_pile	*swap(t_pile *origin)
 {
-	t_pile	*pilerec;
-	t_pile	*pilebeg;
+	t_pile	*ret;
 
-	t_pilebeg = pilea;
-	pilerec = pileb;
-	pilea = pilea->next;
-	pilea->prev = NULL;
-	while (pilea->next != NULL)
-		pilea = pile->next;
-	pilea->next = pilerec;
-	pilea->next->prev = pilea;
-	pilea->next->next = NULL;
-	pilea = pilebeg;
+	ret = origin;
+	origin = origin->next;
+	origin->next = ret;
+	origin->next->next = ret->next->next;
+	return (origin);
 }

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abruyere <abruyere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/09 18:08:32 by abruyere          #+#    #+#             */
-/*   Updated: 2015/02/09 18:08:36 by abruyere         ###   ########.fr       */
+/*   Created: 2015/02/09 18:08:54 by abruyere          #+#    #+#             */
+/*   Updated: 2015/02/09 18:08:56 by abruyere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_b(t_pile	*pileb, t_pile *pilea)
+void	reverse_rotate(t_pile *pile)
 {
-	t_pile	*pilerec;
 	t_pile	*pilebeg;
 
-	t_pilebeg = pilea;
-	pilerec = pileb;
-	pilea = pilea->next;
-	pilea->prev = NULL;
-	while (pilea->next != NULL)
-		pilea = pile->next;
-	pilea->next = pilerec;
-	pilea->next->prev = pilea;
-	pilea->next->next = NULL;
-	pilea = pilebeg;
+	pilebeg = pile;
+	while (pile->next != NULL)
+		pile = pile->next;
+	pile->prev->next = NULL;
+	pile->prev = NULL;
+	pile->next = pilebeg;
+	pile->next->prev = pile;
 }
