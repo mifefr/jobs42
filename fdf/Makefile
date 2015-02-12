@@ -13,7 +13,7 @@
 .PHONY: all, clean, fclean, re
 
 NAME = fdf
-CFLAGS = -Wall -Werror -Wextra -O3 -g -I includes/
+CFLAGS = -Wall -Werror -Wextra -O3 -g -I include
 LIBFT = libft -lft
 LIBMLX = /usr/X11/lib
 LIBML = libml -lml
@@ -35,7 +35,7 @@ $(NAME) :
 	@make -C $(LIBML) fclean
 	@make -C $(LIBML)
 	gcc $(CFLAGS) -c $(SRCS)
-	gcc $(OBJ) -o $(NAME) -L $(LIBFT) -L $(LIBML) -L $(LIBMLX) $(MLXFLAGS)
+	gcc $(OBJ) -o $(NAME) -L $(LIBFT) -L $(LIBML) -L $(LIBMLX) -L /usr/local/lib $(MLXFLAGS)
 
 clean :
 	@make -C $(LIBFT) clean

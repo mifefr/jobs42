@@ -15,7 +15,8 @@
 NAME = fractol
 CFLAGS = -Wall -Werror -Wextra -O3 -g -I includes/
 LIBFT = libft -lft
-LIBMLX = /usr/X11/lib
+LIBMLX = /usr/local/lib
+X11 = /usr/X11/lib
 MLXFLAGS = -lXext -lmlx -lX11
 SRCS =  ft_julia.c ft_procarg.c mouse_hook.c \
 		ft_getcol.c ft_mandelbrot.c key_hook.c \
@@ -30,7 +31,7 @@ $(NAME) :
 	@make -C $(LIBFT) fclean
 	@make -C $(LIBFT)
 	gcc $(CFLAGS) -c $(SRCS)
-	gcc $(OBJ) -o $(NAME) -L $(LIBFT) -L $(LIBMLX) $(MLXFLAGS)
+	gcc $(OBJ) -o $(NAME) -L $(LIBFT) -L $(LIBMLX) -L $(X11) $(MLXFLAGS)
 
 clean :
 	@make -C $(LIBFT) clean
