@@ -7,6 +7,15 @@ int		exist(t_pile *apile)
 	return (0);
 }
 
+int		is_order(t_pile *p)
+{
+	while (p->v < p->push)
+		p++;
+	if (p->push == NULL)
+		return (1);
+
+}
+
 int		last(t_pile *apile)
 {
 	t_pile *begpile;

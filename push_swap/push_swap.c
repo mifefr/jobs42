@@ -13,19 +13,29 @@
 
 #include "push_swap.h"
 
+void	processing(t_pile *pa, t_pile *pb)
+{
+	if (is_order(pa))
+		exit(0);
+	
+	processing (pa, pb);
+}
+
 void	push_swap(int nbe, char **list)
 {
 	int		i;
-	t_pile	pa;
+	t_pile	*pa;
+	t_pile	*pb;
 
 	pa = new_elem(pa);
+	pb = new_elem(pb);
 	i = 0;
 	while (i < nbe)
 	{
 		pa = add_elem(pa, (int)list[i]);
 		i++;
 	}
-
+	processing(pa, pb);
 }
 
 int	 	main(int argc, char **argv)
