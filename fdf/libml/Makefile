@@ -16,7 +16,7 @@ CC = gcc
 
 RM = rm -rf
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I ../include
 
 SRCS = color.c draw_line.c mouse_draw.c \
 	   mouse_hook.c key_hook.c expose_hook.c
