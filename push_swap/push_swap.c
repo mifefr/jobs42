@@ -13,14 +13,6 @@
 
 #include "push_swap.h"
 
-void	processing(t_pile *pa, t_pile *pb)
-{
-	if (is_order(pa))
-		exit(0);
-	
-	processing (pa, pb);
-}
-
 void	push_swap(int nbe, char **list)
 {
 	int		i;

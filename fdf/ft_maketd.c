@@ -16,7 +16,7 @@ t_point	ft_makeiso(t_point pts)
 {
 	pts.x = 0.5 * pts.x - 0.5 * pts.y;
 	pts.y = -pts.z * 2 + 0.5 / 2 * pts.x + 0.5 / 2 * pts.y;
-	pts.x += 700;
-	pts.y += 700;
+	pts.x += 200;
+	pts.y += 200;
 	return (pts);
 }

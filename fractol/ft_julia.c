@@ -36,7 +36,7 @@ int		ft_julia(t_mlxenv e)
 					break ;
 				p.i++;
 			}
-			p.color = ft_gethexa(ft_getcol(p.iterationmax, p.i * 256), ft_getcol(p.iterationmax, p.i * 255), ft_getcol(p.iterationmax, p.i * 255));
+			p.color = ft_gethexa(ft_getcol(p.iterationmax, p.i * 255), ft_getcol(p.iterationmax, p.i * 256), ft_getcol(p.iterationmax, p.i * 256));
 			//if (p.i == p.iterationmax)
 			mlx_pixel_put(e.mlx, e.window, p.x, p.y, p.color);
 			p.i = 0;
