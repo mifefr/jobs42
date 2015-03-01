@@ -11,14 +11,21 @@
 /* ************************************************************************** */
 #include "game_2048.h"
 
+void	run_game(int i)
+{
+	ft_putchar(i + 48);
+	exit(0);
+}
+
 void	ask_param(void)
 {
 	int ch;
 
 	ch = 0;
 	initscr();
+	keypad(stdscr, TRUE);
 	printw("Veuillez choisir la taille de votre grille :\n");
-	printw("(entre 4 et 9 cases !!!)");
+	printw("(entre 4 et 9 cases !!!)\n");
 	noecho();
 	while(42)
 	{
@@ -50,6 +57,7 @@ int		choose_opt(void)
 	printw("\n3 : consulter les scores.\n");
 	printw("4 : quitter le jeu\n");
 	noecho();
+	keypad(stdscr, TRUE);
 	
 	while (42)
 	{
@@ -62,8 +70,8 @@ int		choose_opt(void)
 			return (2);
 		if (ch == 51)
 			return (3);
-		if (ch == 52)
-			return (4);
+		if (ch == 27 || ch == 52)
+			exit(0);
 		refresh();
 	}
 	return (0);

@@ -32,7 +32,7 @@ enum e_const
 
 int				make_title(void);
 
-void			run_game(t_game *game);
+// void			run_game(t_game *game);
 /*
  * **	appel de init_tab et begin_tab dans le main avant appel de run_game
  * **	

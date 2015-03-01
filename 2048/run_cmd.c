@@ -13,10 +13,31 @@
 
 void	run_cmd(void)
 {
-	ft_putstr("Voici les touches dirrectionelles\n\n");
+	int	ch;
+
+	ch = 0;
+	initscr();
+	clear();
+	printw("Voici les touches dirrectionelles\n\n");
 	ascii_art_comdir();
-	ft_putstr("\n\nQuitter :\n");
+	printw("\n\nQuitter :\n");
 	ascii_art_exit();
-	ft_putstr("\n\nAcceuil :\n");
+	printw("\n\nAcceuil :\n");
 	ascii_art_home();
+	noecho();
+	keypad(stdscr, TRUE);	
+	while (42)
+	{
+				
+		ch = getch();
+		//printw("%d", ch);
+		if (ch == 27)
+			exit(0);
+		if (ch == 127)
+		{
+			endwin();
+			make_title();
+		}
+		refresh();
+	}
 }
