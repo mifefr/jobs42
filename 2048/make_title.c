@@ -51,11 +51,6 @@ int		choose_opt(void)
 	int	ch;
 
 	ch = 0;
-	ascii_art_2048();
-	ascii_art_thegame();
-	printw("1 : jouer à 2048\n2 : accéder aux commandes.");
-	printw("\n3 : consulter les scores.\n");
-	printw("4 : quitter le jeu\n");
 	noecho();
 	keypad(stdscr, TRUE);
 	
@@ -84,7 +79,12 @@ int		make_title(void)
 
 	initscr();
 	clear();
-	printw("Que voulez vous faire ?\n");
+	ascii_art_2048();
+	ascii_art_thegame();
+	printw("Que voulez vous faire ?\n\n\n");
+	printw("1 : jouer à 2048\n2 : accéder aux commandes.");
+	printw("\n3 : consulter les scores.\n");
+	printw("4 : quitter le jeu\n");
 	choose = choose_opt();
 	endwin();
 	if (choose == 1)
