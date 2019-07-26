@@ -6,7 +6,7 @@
 	//		gcc fichier.o main_test.c
 	//   3 - Enjoy
 	//
-	/**sodomie********amande*******cafloutie******/
+	/**********************************************/
 
 
 
